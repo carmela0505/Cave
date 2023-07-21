@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table complete</title>
+    <link rel="stylesheet" type="text/css" href="style1.css" />
+
+
+    <!-- Les ICONS FONTAWESOME-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- Les ICONS BS5-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top">
+        <a class="navbar-brand" href="index.html">Accueil</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="pays1.html">Pays</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cepage.html">Cepage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="appell.html">Appellation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="couleur.html">Couleur</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="region.html">Region</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="vincomplet.html">Vin</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <!-- SEPARATION DE NAVBAR -->
+    <h1> GESTION DU CAVE A VIN </h1>
+    <div class="form-inline">
+        <label for="txtRech">Recherche&nbsp;&nbsp; </label>
+        <input type="text" class="form-control" id="txtRech" name="txtRech" placeholder="Rechercher" />&nbsp;
+        <i class="fas fa-search" id="btnsearch"></i>
+    </div>
+    <button id="btn-new" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#frmAjout">
+        Nouveau Vin
+    </button>
+    <!-- Zone devant afficher la liste -->
+    <div id="zoneTable"></div>
+    <div id="tliste"></div>
+
+    <!-- Le formulaire MODAL pour la gestion de la VISUALISATION -->
+    <div class="modal" id="frmVue">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal ENTETE -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Liste des Region</h4>
+                    <button type="button" class="close" data-bs-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+
+                <!-- Modal CORPS -->
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="txtcode_vue">Code:</label>
+                            <input type="text" id="txtcode_vue" disabled />
+                        </div>
+                        <div class="form-group">
+                            <label for="txtcodepays_vue">Code Pays:</label>
+                            <input type="text" id="txtcodepays_vue" disabled />
+                        </div>
+                        <div class="form-group">
+                            <label for="txtregion_vue">Region:</label>
+                            <input type="text" id="txtregion_vue" disabled />
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                        Fermer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Le formulaire MODAL pour la gestion de la MODIFICATION -->
+    <div class="modal" id="frmModif">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal ENTETE -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modification</h4>
+                    <button type="button" class="close" data-bs-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+
+                <!-- Modal CORPS -->
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="txtcodepays_modif">Code Pays :</label>
+                            <input type="text" id="txtcodepays_modif" placeholder=" Saisir un code Region" />
+                        </div>
+                        <select id="list">
+                            <option value='1'></option>
+                            <option value='2'></option>
+                            <option value='3'></option>
+                            <option value='4'></option>
+                            <option value='5'></option>
+                        </select>
+
+                        <div class="form-group">
+                            <label for="txtregion_modif">Region:</label>
+                            <input type="text" id="txtregion_modif" placeholder=" Saisir un Region" />
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" id="btnModif_enreg" class="btn btn-success" data-bs-dismiss="modal">
+                                Enregistrer
+                            </button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                                Annuler
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Le formulaire MODAL pour la gestion de l' AJOUT -->
+    <div class="modal" id="frmAjout">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal ENTETE -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Ajout d'un Region</h4>
+                    <button type="button" class="close" data-bs-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+
+                <!-- Modal CORPS -->
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="txtcodepays_ajout">Code Pays :</label>
+                            <input type="text" id="txtcodepays_ajout" placeholder="Saisir un Pays" />
+                        </div>
+                        <div class="form-group">
+                            <label for="txtregion_ajout">Region :</label>
+                            <input type="text" id="txtregion_ajout" placeholder="Saisir un region" />
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" id="btnAjout_enreg" class="btn btn-success">
+                        Enregistrer
+                    </button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                        Annuler
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- Les fichiers JS pour BOOTSTRAP 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Les ICONS BS5-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
+
+
+    <script>
+
+        //	LES FONCTIONS
+
+
+        function vueRegion(e) {
+            // La fonction vueRegion est déclenchée lorsqu'un événement de saisie est déclenché
+            // sur un élément cible. "e" est l'objet d'événement qui a déclenché la fonction.
+            let valeurs = e.target.value.split("*");
+            // La valeur de l'élément cible est divisée en un tableau en utilisant "*" comme séparateur.
+            // Les valeurs sont stockées dans la variable "valeurs".
+
+            document.getElementById("txtcode_vue").value = valeurs[0];// La valeur du premier élément du tableau "valeurs" est affectée à l'élément avec l'ID "txtcode_vue".
+            document.getElementById("txtcodepays_vue").value = valeurs[1];
+            document.getElementById("txtregion_vue").value = valeurs[2];
+
+        }
+
+        function supprRegion() {
+
+            const tableBody = document.getElementById("tliste");
+            // L'élément avec l'ID "tliste" est stocké dans la variable "tableBody".
+
+            tableBody.addEventListener("click", function (event) { // ici je rend la table entière (générée au préalable of course) sensible au click
+                if (event.target.classList.contains("suppr_region")) { // je track les click sur les boutons suppr en utilisant l'event
+                    let row = event.target.closest("tr"); // puis je cherche la ligne la plus proche du bouton où j'ai cliqué (bouton suppr)
+                    let code = row.childNodes[0].textContent;
+                    // Le contenu textuel du premier enfant de la ligne est stocké dans la variable "code".
+
+                    row.remove();
+
+                    let requestOptionsDelete = {
+                        method: "DELETE",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    };
+
+                    fetch(urlApiRegion + "/" + code, requestOptionsDelete)
+                        .then((response) => response.json())
+                        .then(function () { })
+                        .catch(function (error) {
+                            alert("Ajax error: " + error);
+                        });
+                }
+            });
+        }
+        function enregAjoutRegion() {
+            alert("Ajout enregistrer");
+
+            let nouvelleLigne = {
+                CODEPAYS: document.getElementById("txtcodepays_ajout").value,
+                NOMREGION: document.getElementById("txtregion_ajout").value,
+            };
+
+            let requestOptionsAdd = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(nouvelleLigne),
+            };
+
+            fetch(urlApiRegion, requestOptionsAdd)
+                .then((response) => response.json())
+                .then(function (data) {
+                    location.reload();
+                })
+                .catch(function (error) {
+                    alert("Ajax error: " + error);
+                });
+
+            afficherTableau();
+        }
+
+        //    La fonction pour activer la recherche sur la TABLE
+
+        function search(saisie, table) {
+            let zoneRecherche = document.getElementById(saisie);
+            zoneRecherche.addEventListener(
+                "keyup",
+                () => {
+                    // alert("rech " + zoneRecherche.value);
+                    let rows = document
+                        .getElementById(table)
+                        .getElementsByTagName("tr");
+                    for (item of rows) {
+                        if (!item.innerText.includes(zoneRecherche.value)) {
+                            item.classList.add("visually-hidden");
+                        } else {
+                            item.classList.remove("visually-hidden"); // Classe BS
+                        }
+                    }
+                },
+                false
+            );
+        }
+
+        function modifRegion(event) {
+            let row = event.target.closest("tr"); // j'utilise "event" pour recuperer la ligne (tr) la plus proche du bouton où j'ai cliqué.
+
+            let codepays = document.getElementById("txtcodepays_modif");
+            let region = document.getElementById("txtregion_modif");
+            let combo = document.getElementById("zoneCombo-id");
+
+
+            let code = row.childNodes[0].textContent;
+
+            codepays.value = row.childNodes[1].textContent;
+            region.value = row.childNodes[2].textContent;
+
+
+
+
+            function enregistrerModif() {
+                let ligneModifiee = {
+                    CODEPAYS: document.getElementById("txtcodepays_modif").value,
+                    NOMREGION: document.getElementById("txtregion_modif").value,
+                };
+
+                let requestOptionsModif = {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(ligneModifiee),
+                };
+
+                fetch(urlApiRegion + "/" + code, requestOptionsModif)
+                    .then((response) => response.json())
+                    .then(function (data) {
+                        alert("Modification effectuée");
+                        location.reload();
+                    })
+                    .catch(function (error) {
+                        alert("Ajax error: " + error);
+                    });
+            }
+
+
+
+            document
+                .getElementById("btnModif_enreg")
+                .addEventListener("click", enregistrerModif, false);
+        }
+
+        const boutonModif = document.getElementsByClassName("mod_region");
+
+        // Ajouter l'événement click à chaque élément de la collection
+        for (let i = 0; i < boutonModif.length; i++) {
+            boutonModif[i].addEventListener("click", modifRegion, false);
+        }
+
+
+
+
+        function afficherTableau() {
+            // alert("Affiche TABLEAU");
+            const tab = new Table();
+
+            tab.id_zone = "zoneTable";
+            tab.class_table = "table table-warning table-warning";
+            // Version avec 2 colonnes
+            tab.header = ["Code", "Code Pays", "Nom Région"];
+
+            tab.class_modif = "mod_region";
+            tab.class_suppr = "suppr_region";
+            tab.class_vue = "vue_region";
+
+            //  BS 5  
+            tab.icone_vue = "bi bi-eye";
+            tab.icone_modif = "bi bi-pencil";
+            tab.icone_suppr = "bi bi-trash3";
+
+            // Les méthodes
+            tab.fonction_modif = modifRegion;
+            tab.fonction_suppr = supprRegion;
+            tab.fonction_vue = vueRegion;
+
+            tab.separateur = "*";
+
+            // Les nouvelles Propriétés de la classe TABLE
+            tab.BS_class_modif = "btn btn-info btn-sm";
+            tab.BS_class_suppr = "btn btn-danger btn-sm";
+            tab.BS_class_vue = "btn btn-success btn-sm";
+
+            // Pour les fenetres MODAL BS
+            tab.BS_toggle_modal = {
+                // attribut : "data-toggle" ,
+                attribut: "data-bs-toggle",
+                valeur: "modal",
+            };
+            tab.BS_target_vue = {
+                attribut: "data-bs-target",
+                valeur: "#frmVue",
+            };
+
+            tab.BS_target_modif = {
+                attribut: "data-bs-target",
+                valeur: "#frmModif",
+            };
+
+            tab.id_tbody = "tliste";
+            tab.append = false;
+
+            let requestOptions = {
+                method: "GET",
+                redirect: "follow",
+            };
+
+            fetch(urlApiRegion + "?include=PAYS&transform=1", requestOptions)
+                .then((response) => response.json())
+                .then(function (data) {
+
+                    let nouveauTableauRegion = data.REGION.map(region => {
+                        console.log(region.CODEREGION[0]["NOMREGION"])
+                        return [region.CODEREGION,
+                        region.CODEREGION,
+                        region.REGION[0]["NOMREGION"],
+                        ]
+                    })
+                    tab.data = nouveauTableauRegion;
+
+                    tab.generer();
+                })
+                .catch(function (error) {
+                    alert("Ajax error: " + error);
+                });
+
+            document
+                .getElementById("btnAjout_enreg")
+                .addEventListener("click", enregAjoutRegion, false);
+        }
+
+
+        //	PROGRAMME PRINCIPAL                  
+
+
+        window.addEventListener("load", (event) => {
+            afficherTableau();
+            search("txtRech", "tliste");
+
+            const boutonModif = document.getElementsByClassName("mod_region");
+            for (let i = 0; i < boutonModif.length; i++) {
+                boutonModif[i].addEventListener("click", modifRegion);
+            }
+        });
+    </script>
+    <footer>© 2023 Copyright: CU</footer>
+
+    <script src="Table.js"></script>
+
+    <script src="init_region.js"></script>
+</body>
+
+</html>

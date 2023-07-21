@@ -1,0 +1,24 @@
+
+/*.masthead{
+    background-size: cover;
+    min-height: 40vh;
+    position: relative;
+    color: white whiute;
+}*/
+
+/* .navbar .navbar-nav .nav-link:hover{
+    background-color: #bbd2e1;
+   
+}
+
+footer{
+    background-color: #a9eafe;
+} */
+
+@media screen and (min-width: 992px) {
+    .navbar{
+padding: 0;
+    }
+
+}
+    
