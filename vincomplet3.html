@@ -47,12 +47,12 @@
 
 <body>
     <div class="d-flex justify-content-center align-items-center "
-        style="background-image: url('ress/vigne.jpeg'); background-size: cover;  height:100vh">
+        style="background-image: url('img/vigne.jpeg'); background-size: cover;  height:100vh">
         <nav class="navbar navbar-expand-sm navbar-expand-mg rounded-2" style="background-color: gainsboro" ;>
             <div class="container-fluid">
 
                 <a class="navbar-brand fw-bold " href="#"></a>
-                <img src="ress/logo2.jpg" alt="logo" width="100" height="70" class="d-inline-block align-text-top">
+                <img src="img/logo2.jpg" alt="logo" width="100" height="70" class="d-inline-block align-text-top">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -61,8 +61,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                         <li class="nav-item">
-                            <a class="nav-link active link-primary " aria-current="page"
-                                href="vincomplet3.html">Accueil</a>
+                            <a class="nav-link active link-primary " aria-current="page" href="index1.html">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active link-success" href="vincomplet3.html">Catalogue </a>
@@ -74,13 +73,12 @@
                                 Table des Références
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="cepage1.html">Cépages</a></li>
-                                <li><a class="dropdown-item" href="region1.html">Région</a></li>
+                                <li><a class="dropdown-item" href="cepage1.html">Cépage</a></li>
+                                <li><a class="dropdown-item" href="region2.html">Région</a></li>
                                 <li><a class="dropdown-item" href="pays1.html">Pays</a></li>
                                 <li><a class="dropdown-item" href="appell1.html">Appellation</a></li>
                                 <li><a class="dropdown-item" href="couleur1.html">Couleur</a></li>
-                               
-                                <!-- <li><a class="dropdown-item" href="conten1.html">Contenance</a></li> -->
+
                             </ul>
                     </ul>
                     </li>
@@ -107,12 +105,12 @@
     <!-- SEPARATION DE NAVBAR -->
     <h1>LA GESTION DES VINS </h1>
     <div class="form-inline">
-
     </div>
     <button id="btn-new" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#frmAjout">
         Nouveau Vin
     </button>
     <!-- Zone devant afficher la liste -->
+    <div style="overflow-x:auto;"></div>
     <div id="zoneTable"></div>
     <div id="tliste"></div>
     <!-- Le formulaire MODAL pour la gestion de la VISUALISATION -->
@@ -140,11 +138,11 @@
                         </div>
                         <div class="form-group">
                             <label for="txtappell_vue">Appellation:</label><br>
-                            <input type="number" id="txtappell_vue" disabled />
+                            <input type="text" id="txtappell_vue" disabled />
                         </div>
                         <div class="form-group">
                             <label for="txtregion_vue">Region:</label><br>
-                            <input type="number" id="txtregion_vue" disabled />
+                            <input type="text" id="txtregion_vue" disabled />
                         </div>
                         <div class="form-group">
                             <label for="txtcouleur_vue">Couleur:</label><br>
@@ -170,7 +168,6 @@
             </div>
         </div>
     </div>
-
     <!-- Le formulaire MODAL pour la gestion de la MODIFICATION -->
     <div class="modal" id="frmModif">
         <div class="modal-dialog">
@@ -186,7 +183,7 @@
                 <div class="modal-body">
                     <form action="">
                         <div class="form-group">
-                            <label for="txtcuvee_modif">Cuvee:</label><br>
+                            <label for="txtcuvee_modif">Cuvée:</label><br>
                             <input type="text" id="txtcuvee_modif" placeholder=" Saisir un cuvee" />
                         </div>
                         <div class="form-group">
@@ -194,13 +191,11 @@
                             <select id="comboAppellationModif">
                             </select>
                         </div>
-
                         <div class="form-group">
                             <label for="comboRegionModif">Région:</label><br>
                             <select id="comboRegionModif">
                             </select>
                         </div>
-
                         <div class="form-group">
                             <label for="comboCouleurModif">Couleur:</label><br>
                             <select id="comboCouleurModif">
@@ -249,36 +244,24 @@
                 <div class="modal-body">
                     <form action="">
                         <div class="form-group">
-                            <label for="txtcuvee_ajout">Cuvee :</label><br>
+                            <label for="txtcuvee_ajout">Cuvée :</label><br>
                             <input type="text" id="txtcuvee_ajout" placeholder="Saisir un Vin" />
                         </div>
                         <div class="form-group">
                             <label for="comboAppellationAjout">Appellation :</label><br>
                             <select id="comboAppellationAjout">
-
                             </select>
                         </div>
-
-
-
                         <div class="form-group">
                             <label for="comboRegionAjout">Région :</label><br>
                             <select id="comboRegionAjout">
                             </select>
-
                         </div>
-
-
                         <div class="form-group">
                             <label for="comboCouleurAjout">Couleur :</label><br>
                             <select id="comboCouleurAjout">
-
-
                             </select>
                         </div>
-
-
-
                         <div class="form-group">
                             <label for="txtculture_ajout">Cultures :</label><br>
                             <input type="text" id="txtculture_ajout" placeholder="Saisir une Culture" />
@@ -287,7 +270,6 @@
                             <label for="txtcomment_ajout">Commentaires :</label><br>
                             <input type="text" id="txtcomment_ajout" placeholder="Saisir un Commentaire" />
                         </div>
-
                     </form>
                 </div>
 
@@ -321,11 +303,11 @@
 
 
 
-    <script src="Table.js"></script>
+    <script src="js/Table.js"></script>
 
-    <script src="init_Vin.js"></script>
-    <!-- <script src="Combo.js"></script> -->
-    <script type="module" src="vincomplet3.js"></script>
+    <script src="js/init_Vin.js"></script>
+
+    <script src="js/vincomplet3.js"></script>
 </body>
 
 </html>

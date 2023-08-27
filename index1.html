@@ -17,18 +17,18 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <!-- Les ICONS BS5-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
-
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 
 </head>
 
 <body>
   <div class="d-flex justify-content-center align-items-center "
-    style="background-image: url('ress/vigne.jpeg'); background-size: cover;  height:100vh">
+    style="background-image: url('img/vigne3.jpeg'); background-size: cover;  height:200vh">
     <nav class="navbar navbar-expand-sm navbar-expand-mg rounded-2" style="background-color: gainsboro" ;>
       <div class="container-fluid">
 
-        <a class="navbar-brand fw-bold " href="#"></a>
-        <img src="ress/logo2.jpg" alt="logo" width="100" height="70" class="d-inline-block align-text-top">
+        <a class="navbar-brand fw-bold " href="#">GESTION DE CAVE A VIN</a>
+        <img src="img/logo2.jpg" alt="logo" width="100" height="70" class="d-inline-block align-text-top">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -36,10 +36,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active link-primary " aria-current="page" href="pays1.html">Accueil</a>
+              <a class="nav-link active link-primary " aria-current="page" href="index1.html">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active link-success" href="vincomplet.html">Catalogue</a>
+              <a class="nav-link active link-success" href="vincomplet3.html">Catalogue des Vins</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -48,45 +48,48 @@
                 Tables des Références
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="cepage1.html">Cépages</a></li>
-                <li><a class="dropdown-item" href="region1.html">Région</a></li>
+                <li><a class="dropdown-item" href="cepage1.html">Cépage</a></li>
+                <li><a class="dropdown-item" href="region2.html">Région</a></li>
                 <li><a class="dropdown-item" href="pays1.html">Pays</a></li>
                 <li><a class="dropdown-item" href="appell1.html">Appellation</a></li>
                 <li><a class="dropdown-item" href="couleur1.html">Couleur</a></li>
-                <!-- <li><a class="dropdown-item" href="conten1.html">Contenance</a></li> -->
+
               </ul>
           </ul>
           </li>
 
-          <form class="d-flex" role="search">
-            <!-- <label for="txtRech">Recherche&nbsp;&nbsp; </label> -->
-            <input type="text" class="form-control" id="txtRech" name="txtRech" placeholder="Rechercher"
-              aria-label="Search">&nbsp
-            <button id="btn-new" class="btn btn-outline-success" data-bs-target="#frmAjout">Search&nbsp;&nbsp;</button>
+          <!-- <div class="input-group">
+            <input class="form-control border-end-0 border " id="txtRech" type="search" placeholder="Rechercher"
+              id="example-search-input">
+            <span class="input-group-append">
+              <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5"
+                type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div> -->
 
-          </form>
         </div>
       </div>
   </div>
   </div>
   </nav>
 
-
-
-  <h1> GESTION DES VINS </h1>
-  <div class="form-inline">
+  <!-- <h1> PROJET CAVE A VIN </h1> -->
+  <!-- <div class="form-inline">
   </div>
   <button id="btn-new" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#frmAjout">
-    Nouveau Vin
+    Nouveau Pays
   </button>
-  <!-- Zone devant afficher la liste  -->
-  <div id="zoneTable"></div>
+   Zone devant afficher la liste  -->
+  <!-- <div id="zoneTable"></div>
   <div id="tliste"></div>
-  <!-- Le formulaire MODAL pour la gestion de la VISUALISATION -->
+
+  Le formulaire MODAL pour la gestion de la VISUALISATION 
   <div class="modal" id="frmVue">
     <div class="modal-dialog">
       <div class="modal-content">
-        <!-- Modal ENTETE -->
+         Modal ENTETE 
         <div class="modal-header">
           <h4 class="modal-title">Liste des Pays</h4>
           <button type="button" class="close" data-bs-dismiss="modal">
@@ -94,21 +97,21 @@
           </button>
         </div>
 
-        <!-- Modal CORPS -->
+        Modal CORPS 
         <div class="modal-body">
           <form action="">
             <div class="form-group">
-              <label for="txtcode_vue">Pays:</label>
+              <label for="txtcode_vue">Code Pays:</label><br>
               <input type="text" id="txtcode_vue" disabled />
             </div>
             <div class="form-group">
-              <label for="txtpays_vue">Pays:</label>
+              <label for="txtpays_vue">Pays:</label><br>
               <input type="text" id="txtpays_vue" disabled />
             </div>
           </form>
         </div>
 
-        <!-- Modal footer -->
+         Modal footer 
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
             Fermer
@@ -118,11 +121,11 @@
     </div>
   </div>
 
-  <!-- Le formulaire MODAL pour la gestion de la MODIFICATION -->
+   Le formulaire MODAL pour la gestion de la MODIFICATION 
   <div class="modal" id="frmModif">
     <div class="modal-dialog">
       <div class="modal-content">
-        <!-- Modal ENTETE -->
+        Modal ENTETE 
         <div class="modal-header">
           <h4 class="modal-title">Modification</h4>
           <button type="button" class="close" data-bs-dismiss="modal">
@@ -130,19 +133,19 @@
           </button>
         </div>
 
-        <!-- Modal CORPS -->
+         Modal CORPS 
         <div class="modal-body">
           <form action="">
+             <div class="form-group">
+                            <label for="txtcode_modif">Code :</label>
+                            <input type="text" id="txtcode_modif" disabled />
+                        </div> 
             <div class="form-group">
-              <label for="txtcode_modif">Code :</label>
-              <input type="text" id="txtcode_modif" disabled />
-            </div>
-            <div class="form-group">
-              <label for="txtpays_modif">Pays:</label>
+              <label for="txtpays_modif">Pays:</label><br>
               <input type="text" id="txtpays_modif" placeholder=" Saisir un pays" />
             </div>
 
-            <!-- Modal footer -->
+             Modal footer 
             <div class="modal-footer">
               <button type="button" id="btnModif_enreg" class="btn btn-success" data-bs-dismiss="modal">
                 Enregistrer
@@ -157,30 +160,29 @@
     </div>
   </div>
 
-  <!-- Le formulaire MODAL pour la gestion de l' AJOUT -->
+   Le formulaire MODAL pour la gestion de l' AJOUT 
   <div class="modal" id="frmAjout">
     <div class="modal-dialog">
       <div class="modal-content">
-        <!-- Modal ENTETE -->
+         Modal ENTETE 
         <div class="modal-header">
-          <h4 class="modal-title">Ajout d'un pays</h4>
+          <h4 class="modal-title">Ajout d'un pays</h4><br>
           <button type="button" class="close" data-bs-dismiss="modal">
             &times;
           </button>
         </div>
 
-        <!-- Modal CORPS -->
+         Modal CORPS 
         <div class="modal-body">
           <form action="">
             <div class="form-group">
-              <label for="txtpays_ajout">Pays :</label>
+              <label for="txtpays_ajout">Pays :</label><br>
               <input type="text" id="txtpays_ajout" placeholder="Saisir un pays" />
             </div>
-
           </form>
         </div>
 
-        <!-- Modal footer -->
+         Modal footer 
         <div class="modal-footer">
           <button type="button" id="btnAjout_enreg" class="btn btn-success">
             Enregistrer
@@ -191,14 +193,13 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>--!
 
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
 
   <!-- Les fichiers JS pour BOOTSTRAP 5 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -208,232 +209,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
 
 
-
-  <script>
-
-    //	LES FONCTIONS
-
-
-    function vuePays(e) {
-
-      let valeurs = e.target.value.split("*");
-
-      document.getElementById("txtcode_vue").value = valeurs[0];
-      document.getElementById("txtpays_vue").value = valeurs[1];
-
-    }
-
-    function supprPays() {
-
-      const tableBody = document.getElementById("tliste");
-
-      tableBody.addEventListener("click", function (event) { // ici je rend la table entière (générée au préalable of course) sensible au click
-        if (event.target.classList.contains("suppr_pays")) { // je track les click sur les boutons suppr en utilisant l'event
-          let row = event.target.closest("tr"); // puis je cherche la ligne la plus proche du bouton où j'ai cliqué (bouton suppr)
-          let code = row.childNodes[0].textContent;
-
-          row.remove();
-
-          let requestOptionsDelete = {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          };
-
-          fetch(urlApiPays + "/" + code, requestOptionsDelete)
-            .then((response) => response.json())
-            .then(function () { })
-            .catch(function (error) {
-              alert("Ajax error: " + error);
-            });
-        }
-      });
-    }
-    function enregAjoutPays() {
-      alert("Ajout enregistrer");
-
-      let nouvelleLigne = {
-        NOMPAYS: document.getElementById("txtpays_ajout").value,
-
-      };
-
-      let requestOptionsAdd = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(nouvelleLigne),
-      };
-
-      fetch(urlApiPays, requestOptionsAdd)
-        .then((response) => response.json())
-        .then(function (data) {
-          location.reload();
-        })
-        .catch(function (error) {
-          alert("Ajax error: " + error);
-        });
-
-      afficherTableau();
-    }
-
-    //    La fonction pour activer la recherche sur la TABLE
-
-    function search(saisie, table) {
-      let zoneRecherche = document.getElementById(saisie);
-      zoneRecherche.addEventListener(
-        "keyup",
-        () => {
-          // alert("rech " + zoneRecherche.value);
-          let rows = document
-            .getElementById(table)
-            .getElementsByTagName("tr");
-          for (item of rows) {
-            if (!item.innerText.includes(zoneRecherche.value)) {
-              item.classList.add("visually-hidden");
-            } else {
-              item.classList.remove("visually-hidden"); // Classe BS
-            }
-          }
-        },
-        false
-      );
-    }
-
-    function modifPays(event) {
-      let row = event.target.closest("tr"); // j'utilise "event" pour recuperer la ligne (tr) la plus proche du bouton où j'ai cliqué.
-
-      let pays = document.getElementById("txtpays_modif");
-
-      let code = row.childNodes[0].textContent;
-
-      pays.value = row.childNodes[1].textContent;
-
-
-      function enregistrerModif() {
-        let ligneModifiee = {
-          NOMPAYS: pays.value,
-        };
-
-        let requestOptionsModif = {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(ligneModifiee),
-        };
-
-        fetch(urlApiPays + "/" + code, requestOptionsModif)
-          .then((response) => response.json())
-          .then(function (data) {
-            alert("Modification effectuée");
-            location.reload();
-          })
-          .catch(function (error) {
-            alert("Ajax error: " + error);
-          });
-      }
-
-      document
-        .getElementById("btnModif_enreg")
-        .addEventListener("click", enregistrerModif, false);
-    }
-
-    const boutonModif = document.getElementsByClassName("mod_pays");
-
-    // Ajouter l'événement click à chaque élément de la collection
-    for (let i = 0; i < boutonModif.length; i++) {
-      boutonModif[i].addEventListener("click", modifPays, false);
-    }
-
-    function afficherTableau() {
-      // alert("Affiche TABLEAU");
-      const tab = new Table();
-
-      tab.id_zone = "zoneTable";
-      tab.class_table = "table table-warning table-warning";
-      // Version avec 2 colonnes
-      tab.header = ["Code Pays", "Pays"];
-
-      tab.class_modif = "mod_pays";
-      tab.class_suppr = "suppr_pays";
-      tab.class_vue = "vue_pays";
-
-      //  BS 5  
-      tab.icone_vue = "bi bi-eye";
-      tab.icone_modif = "bi bi-pencil";
-      tab.icone_suppr = "bi bi-trash3";
-
-      // Les méthodes
-      tab.fonction_modif = modifPays;
-      tab.fonction_suppr = supprPays;
-      tab.fonction_vue = vuePays;
-
-      tab.separateur = "*";
-
-      // Les nouvelles Propriétés de la classe TABLE
-      tab.BS_class_modif = "btn btn-info btn-sm";
-      tab.BS_class_suppr = "btn btn-danger btn-sm";
-      tab.BS_class_vue = "btn btn-success btn-sm";
-
-      // Pour les fenetres MODAL BS
-      tab.BS_toggle_modal = {
-        // attribut : "data-toggle" ,
-        attribut: "data-bs-toggle",
-        valeur: "modal",
-      };
-      tab.BS_target_vue = {
-        attribut: "data-bs-target",
-        valeur: "#frmVue",
-      };
-
-      tab.BS_target_modif = {
-        attribut: "data-bs-target",
-        valeur: "#frmModif",
-      };
-
-      tab.id_tbody = "tliste";
-      tab.append = false;
-
-      let requestOptions = {
-        method: "GET",
-        redirect: "follow",
-      };
-
-      fetch(urlApiPays, requestOptions)
-        .then((response) => response.json())
-        .then(function (data) {
-          tab.data = data.PAYS.records;
-          tab.generer();
-        })
-        .catch(function (error) {
-          alert("Ajax error: " + error);
-        });
-
-      document
-        .getElementById("btnAjout_enreg")
-        .addEventListener("click", enregAjoutPays, false);
-    }
-
-
-    //	PROGRAMME PRINCIPAL                  
-
-
-    window.addEventListener("load", (event) => {
-      afficherTableau();
-      search("txtRech", "tliste");
-
-      const boutonModif = document.getElementsByClassName("mod_pays");
-      for (let i = 0; i < boutonModif.length; i++) {
-        boutonModif[i].addEventListener("click", modifPays);
-      }
-    });
-  </script>
   <footer>© 2023 Copyright: CU</footer>
 
-  <script src="Tablepays.js"></script>
-  <script src="init_pays.js"></script>
+
 </body>
 
 </html>
